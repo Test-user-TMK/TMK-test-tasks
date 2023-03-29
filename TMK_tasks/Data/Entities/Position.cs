@@ -10,24 +10,31 @@ namespace TMK_tasks.Data.Entities
         public int Id { get; set; }
 
         [Column("steel_type_id")]
-        public int SteelTypeId { get; set; }
+        [Required(ErrorMessage = "Необходимо указать марку стали")]
+        public int? SteelTypeId { get; set; }
 
         [Column("diameter")]
-        public int Diameter { get; set; }
+        [Required(ErrorMessage = "Необходимо указать диаметр")]
+        public int? Diameter { get; set; }
 
         [Column("side_width")]
-        public int SideWidth { get; set; }
+        [Required(ErrorMessage = "Необходимо указать стенку")]
+        public int? SideWidth { get; set; }
 
         [Column("volume")]
-        public int Volume { get; set; }
+        [Required(ErrorMessage = "Необходимо указать объем")]
+        public int? Volume { get; set; }
 
         [Column("unit")]
-        public string Unit { get; set; }
+        [Required(ErrorMessage = "Необходимо указать единицы измерения")]
+        public string? Unit { get; set; }
 
         [Column("state_id")]
-        public int StateId { get; set; }
+        [Required(ErrorMessage = "Необходимо указать статус позиции")]
+        public int? StateId { get; set; }
 
         [Column("order_id")]
+        [Required(ErrorMessage = "Необходимо указать связанный заказ")]
         public int OrderId { get; set; }
 
         public SteelType SteelType { get; set; }

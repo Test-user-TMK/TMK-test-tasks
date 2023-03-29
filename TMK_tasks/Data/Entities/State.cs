@@ -10,6 +10,7 @@ namespace TMK_tasks.Data.Entities
         public int Id { get; set; }
 
         [Column("title")]
+        [Required(ErrorMessage = "Название обязательно для заполнения")]
         public string? Title { get; set; }
 
         public List<Order> Orders { get; set; }
