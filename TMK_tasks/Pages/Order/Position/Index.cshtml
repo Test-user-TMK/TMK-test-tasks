@@ -1,0 +1,42 @@
+﻿@page "/order/positions/index"
+@model TMK_tasks.Pages.Order.Position.Index
+@{
+    ViewData["Title"] = "Позиции";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a asp-page="./Create" asp-route-id="@Model.ParentOrder.Id" class="btn btn-primary">Добавить позицию</a>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th scope="col">Номер позиции</th>
+                    <th scope="col">Марка стали</th>
+                    <th scope="col">Диаметр</th>
+                    <th scope="col">Стенка</th>
+                    <th scope="col">Объем позиции заказа</th>
+                    <th scope="col">Единица измерения</th>
+                    <th scope="col">Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var position in Model.ParentOrder.Positions)
+                {
+                    <tr>
+                        <th scope="row">@position.Id</th>
+                        <td>@position.SteelType.Title</td>
+                        <td>@position.Diameter</td>
+                        <td>@position.SideWidth</td>
+                        <td>@position.Volume</td>
+                        <td>@position.Unit</td>
+                        <td>@position.State.Title</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
