@@ -1,0 +1,53 @@
+﻿@page "/order/position/update"
+@model TMK_tasks.Pages.Order.Position.Update
+@{
+    ViewData["Title"] = "Редактирование позиции";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <form method="post">
+                <legend>Редактирование позиции</legend>
+                <input type="hidden" asp-for="PositionToUpdate.Id" />
+                <div class="mb-3">
+                    <label for="selectSteelTypeId" class="form-label">Марка стали</label>
+                    <select asp-for="PositionToUpdate.SteelTypeId" class="form-select" id="selectSteelTypeId">
+                        @foreach (var steelType in Model.SteelTypes)
+                        {
+                            <option value="@steelType.Id">@steelType.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="txtDiameter" class="form-label">Диаметр</label>
+                    <input type="text" asp-for="PositionToUpdate.Diameter" class="form-control" id="txtDiameter" />
+                </div>
+                <div class="mb-3">
+                    <label for="txtSideWidth" class="form-label">Стенка</label>
+                    <input type="text" asp-for="PositionToUpdate.SideWidth" class="form-control" id="txtSideWidth" />
+                </div>
+                <div class="mb-3">
+                    <label for="txtVolume" class="form-label">Объем позиции заказа</label>
+                    <input type="text" asp-for="PositionToUpdate.Volume" class="form-control" id="txtVolume" />
+                </div>
+                <div class="mb-3">
+                    <label for="txtUnit" class="form-label">Единица измерения</label>
+                    <input type="text" asp-for="PositionToUpdate.Unit" class="form-control" id="txtUnit" />
+                </div>
+                <div class="mb-3">
+                    <label for="selectState" class="form-label">Статус</label>
+                    <select asp-for="PositionToUpdate.StateId" class="form-select" id="selectState">
+                        @foreach (var state in Model.States)
+                        {
+                            <option value="@state.Id">@state.Title</option>
+                        }
+                    </select>
+                </div>
+                <input type="hidden" value="@Model.Order.Id" asp-for="PositionToUpdate.OrderId" />
+                <input type="hidden" value="@Model.Order.Id" asp-for="OriginalId" />
+                <input class="btn btn-primary" type="submit" value="Сохранить">
+            </form>
+        </div>
+    </div>
+</div>

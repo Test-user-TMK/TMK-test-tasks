@@ -15,9 +15,22 @@
             <thead>
                 <tr>
                     <th scope="col">Номер позиции</th>
-                    <th scope="col">Марка стали</th>
-                    <th scope="col">Диаметр</th>
-                    <th scope="col">Стенка</th>
+                    <th scope="col">
+                        <div>
+                            <label class="form-label">Поиск</label>
+                            <input type="text" class="form-control" id="steelType_search" />
+                        </div>Марка стали
+                    </th>
+                    <th scope="col">
+                        <div>
+                            <input type="text" class="form-control" id="diameter_search" />
+                        </div>Диаметр
+                    </th>
+                    <th scope="col">
+                        <div>
+                            <input type="text" class="form-control" id="sideWidth_search" />
+                        </div>Стенка
+                    </th>
                     <th scope="col">Объем позиции заказа</th>
                     <th scope="col">Единица измерения</th>
                     <th scope="col">Статус</th>
@@ -28,12 +41,16 @@
                 {
                     <tr>
                         <th scope="row">@position.Id</th>
-                        <td>@position.SteelType.Title</td>
-                        <td>@position.Diameter</td>
-                        <td>@position.SideWidth</td>
+                        <td class="steelType">@position.SteelType.Title</td>
+                        <td class="diameter">@position.Diameter</td>
+                        <td class="sideWidth">@position.SideWidth</td>
                         <td>@position.Volume</td>
                         <td>@position.Unit</td>
                         <td>@position.State.Title</td>
+                        <td>
+                            <a asp-page="./Update" asp-route-id="@position.Id">Редактировать</a>
+                            <a asp-page="./Delete" asp-route-id="@position.Id">Удалить</a>
+                        </td>
                     </tr>
                 }
             </tbody>

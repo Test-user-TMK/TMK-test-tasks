@@ -1,0 +1,43 @@
+﻿@page "/order/update"
+@model TMK_tasks.Pages.Order.Update
+@{
+    ViewData["Title"] = "Редактирование заказа";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <form method="post">
+                <legend>Редактирование заказа</legend>
+                <input type="hidden" asp-for="OrderToUpdate.Id" />
+                <div class="mb-3">
+                    <label for="selectManufacturer" class="form-label">Цех-производитель</label>
+                    <select asp-for="OrderToUpdate.ManufacturerId" class="form-select" id="selectManufacturer">
+                        @foreach (var manufacturer in Model.Manufacturers)
+                        {
+                            <option value="@manufacturer.Id">@manufacturer.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dateDateStart" class="form-label">Дата начала</label>
+                    <input type="date" asp-for="OrderToUpdate.DateStart" class="form-control" id="dateDateStart" />
+                </div>
+                <div class="mb-3">
+                    <label for="dateDateEnd" class="form-label">Дата окончания</label>
+                    <input type="date" asp-for="OrderToUpdate.DateEnd" class="form-control" id="dateDateEnd" />
+                </div>
+                <div class="mb-3">
+                    <label for="selectState" class="form-label">Статус</label>
+                    <select asp-for="OrderToUpdate.StateId" class="form-select" id="selectState">
+                        @foreach (var state in Model.States)
+                        {
+                            <option value="@state.Id">@state.Title</option>
+                        }
+                    </select>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Сохранить">
+            </form>
+        </div>
+    </div>
+</div>
