@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TMK_tasks.Data;
-using TMK_tasks.Data.Entities;
 
 namespace TMK_tasks.Pages.Order.Position
 {

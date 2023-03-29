@@ -3228,9 +3228,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\TMK-repo\\TMK_tasks\\TMK_tasks.csproj",
-      "projectName": "TMK_tasks",
-      "projectPath": "C:\\Development\\TMK-repo\\TMK_tasks\\TMK_tasks.csproj",
+      "projectUniqueName": "C:\\Development\\TMK-repo\\TMK_tasks\\TMK_task_3.csproj",
+      "projectName": "TMK_task_3",
+      "projectPath": "C:\\Development\\TMK-repo\\TMK_tasks\\TMK_task_3.csproj",
       "packagesPath": "C:\\Users\\Олег\\.nuget\\packages\\",
       "outputPath": "C:\\Development\\TMK-repo\\TMK_tasks\\obj\\",
       "projectStyle": "PackageReference",
