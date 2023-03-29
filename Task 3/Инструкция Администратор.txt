@@ -1,0 +1,7 @@
+1. Распаковать архив Task_3_App.rar, расположить дистрибутив на сервере
+2. Применить deploy.sql
+3. Применить patch 1.0.0
+4. Настроить резервное копирование базы orderDb
+5. В дистрибутиве приложения отредактировать файл appsettings.json.
+5.1 В DefaultConnection заменить Data Source, Trusted_Connection=True и TrustServerCertificate=True на актуальные данные
+6. Добавить приложение через диспетчер служб IIS
