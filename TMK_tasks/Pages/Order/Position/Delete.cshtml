@@ -1,0 +1,57 @@
+﻿@page "/order/positions/delete"
+@model TMK_tasks.Pages.Order.Position.Delete
+@{
+    ViewData["Title"] = "Удаление позиции";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <legend>Добавление позиции</legend>
+                    <div class="mb-3">
+                        <label for="selectSteelTypeId" class="form-label">Марка стали</label>
+                        <select disabled asp-for="PositionToDelete.SteelTypeId" class="form-select" id="selectSteelTypeId">
+                            @foreach (var steelType in Model.SteelTypes)
+                            {
+                                <option value="@steelType.Id">@steelType.Title</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtDiameter" class="form-label">Диаметр</label>
+                        <input disabled type="text" asp-for="PositionToDelete.Diameter" class="form-control" id="txtDiameter" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtSideWidth" class="form-label">Стенка</label>
+                        <input disabled type="text" asp-for="PositionToDelete.SideWidth" class="form-control" id="txtSideWidth" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtVolume" class="form-label">Объем позиции заказа</label>
+                        <input disabled type="text" asp-for="PositionToDelete.Volume" class="form-control" id="txtVolume" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtUnit" class="form-label">Единица измерения</label>
+                        <input disabled type="text" asp-for="PositionToDelete.Unit" class="form-control" id="txtUnit" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="selectState" class="form-label">Статус</label>
+                        <select disabled asp-for="PositionToDelete.StateId" class="form-select" id="selectState">
+                            @foreach (var state in Model.States)
+                            {
+                                <option value="@state.Id">@state.Title</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" value="@Model.Order.Id" asp-for="OriginalId" />
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

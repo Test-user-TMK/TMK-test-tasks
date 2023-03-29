@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using TMK_tasks.Models;
+using TMK_tasks.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

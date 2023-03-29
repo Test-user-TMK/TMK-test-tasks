@@ -1,0 +1,3 @@
+Book
+  book_id PK - первичный ключ
+  author_id FK - внешний ключ

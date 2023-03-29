@@ -1,0 +1,43 @@
+﻿@page "/order/delete"
+@model TMK_tasks.Pages.Order.Delete
+@{
+    ViewData["Title"] = "Удаление заказа";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <form method="post">
+                <legend>Удаление заказа</legend>
+                <input type="hidden" asp-for="OrderToDelete.Id" />
+                <div class="mb-3">
+                    <label for="selectManufacturer" class="form-label">Цех-производитель</label>
+                    <select disabled asp-for="OrderToDelete.ManufacturerId" class="form-select" id="selectManufacturer">
+                        @foreach (var manufacturer in Model.Manufacturers)
+                        {
+                            <option value="@manufacturer.Id">@manufacturer.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dateDateStart" class="form-label">Дата начала</label>
+                    <input disabled type="date" asp-for="OrderToDelete.DateStart" class="form-control" id="dateDateStart" />
+                </div>
+                <div class="mb-3">
+                    <label for="dateDateEnd" class="form-label">Дата окончания</label>
+                    <input disabled type="date" asp-for="OrderToDelete.DateEnd" class="form-control" id="dateDateEnd" />
+                </div>
+                <div class="mb-3">
+                    <label for="selectState" class="form-label">Статус</label>
+                    <select disabled asp-for="OrderToDelete.StateId" class="form-select" id="selectState">
+                        @foreach (var state in Model.States)
+                        {
+                            <option value="@state.Id">@state.Title</option>
+                        }
+                    </select>
+                </div>
+                <input class="btn btn-danger" type="submit" value="Удалить">
+            </form>
+        </div>
+    </div>
+</div>

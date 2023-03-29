@@ -1,0 +1,11 @@
+Приложение использует ASP.NET Core .6 NET
+Используется EntityFramework
+Подход BaseFirst
+
+Для использования кода:
+1. Клонировать репозиторий
+2. Очистить проект
+3. Отредактировать DefaultConnection на собственные данные
+4. Применить deploy.sql
+5. Применить patch 1.0.0
+5.1 При желании применить "steel_types, manufacturers, states example values.sql"
